@@ -1,0 +1,132 @@
+/* Container for the whole page */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e6f7ff;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Card-like container for the form */
+.signup-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* A stronger, more professional shadow */
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.signup-card:hover {
+    transform: translateY(-5px); /* A subtle lift effect on hover */
+}
+
+/* Headings and text */
+.signup-card h1 {
+    color: #007BFF; /* A clean, primary blue */
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.signup-card p {
+    color: #6C757D;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Form inputs and labels */
+.form-group {
+    text-align: left;
+    margin-bottom: 25px; /* More space between form fields */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #36454F;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px; /* More padding for a polished look */
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Focus effect */
+    outline: none;
+}
+
+/* Button styles */
+.auth-btn {
+    width: 100%;
+    padding: 16px; /* More padding for a bigger button */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.auth-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+/* Link for Login toggle */
+.auth-link {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #6C757D;
+}
+
+.auth-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.auth-link a:hover {
+    color: #0056b3;
+}
+
+/* Styling for the role selection radio buttons */
+.role-selection {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.role-selection label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    color: #36454F;
+}
+
+.role-selection input[type="radio"] {
+    width: auto;
+    cursor: pointer;
+}
