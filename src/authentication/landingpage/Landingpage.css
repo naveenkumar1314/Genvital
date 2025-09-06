@@ -1,0 +1,377 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Landing Page Container */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo left, everything else right */
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #007bff;
+    margin: 0;
+}
+
+.nav-links-and-button { /* Idhu dhaan pudhiya container */
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Gap between nav links and login button */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Links naduvla gap */
+}
+
+.nav-link {
+    color: #555;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.login-btn {
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Buttons in Navbar */
+.admin-login-link,
+.login-btn {
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.admin-login-link {
+    background-color: #e9ecef; /* Light grey background */
+    color: #333;
+    margin-right: 15px; /* Space between Admin and Login buttons */
+    border: 1px solid #dee2e6;
+}
+
+.admin-login-link:hover {
+    background-color: #dee2e6;
+    color: #000;
+    border-color: #ced4da;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 70vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    animation: fadeInBackground 1.5s ease-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-heading {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    animation: slideInUp 4s ease-out;
+}
+
+.hero-subheading {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 30px;
+    animation: slideInUp 1.2s ease-out;
+}
+/* Buttons */
+.doctor-btn, .patient-btn {
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-btn {
+    background-color: #007BFF;
+}
+
+.patient-btn {
+    background-color: #28A745;
+}
+
+.doctor-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.patient-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.button-group {
+    display: flex;
+    gap: 20px; /* Ithu dhaan buttons naduvla gap kudukkum */
+    margin-top: 20px;
+    justify-content: center; /* Buttons-a center-la vekka */
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.section-heading {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card .icon {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 1em;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 30px 5%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* For responsiveness */
+}
+
+.footer-section p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .hero-heading {
+        font-size: 2.5em;
+    }
+    .hero-subheading {
+        font-size: 1.2em;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer-links {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 3%;
+    }
+    .logo-text {
+        font-size: 1.5em;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-heading {
+        font-size: 2em;
+    }
+    .hero-subheading {
+        font-size: 1em;
+    }
+    .login-btn, .admin-login-link {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+}
+

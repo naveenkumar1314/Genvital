@@ -1,36 +1,43 @@
-import React, { useState } from 'react'; 
-import Landingpage from './landingpage/Landingpage';
-import Login from './authentication/login/login';
-import Signup from './authentication/signup/Signup';
+import React, { useState } from 'react';
+import Landingpage from './authentication/landingpage/Landingpage';
+import DoctorLogin from './authentication/doctor/DoctorLogin';
+import PatientLogin from './authentication/patient/PatientLogin';
+import DoctorSignup from './authentication/doctor/DoctorSignup'; // Import the new component
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLogin, setIsLogin] = useState(true); // Pudhiya state: first login page varum
+  const [showLoginPage, setShowLoginPage] = useState(false);
+  const [showSignupPage, setShowSignupPage] = useState(false); // New state for signup
+  const [userType, setUserType] = useState(null); // 'doctor' or 'patient'
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
+  const handleLoginClick = (type) => {
+    setShowLoginPage(true);
+    setShowSignupPage(false);
+    setUserType(type);
+  };
+
+  const handleSignupClick = () => { // New handler for signup
+    setShowLoginPage(false);
+    setShowSignupPage(true);
   };
   
-  const handlePageChange = () => {
-    setIsLogin(!isLogin); // Pudhiya function: Login page-a Signup-kku maathum
-  };
-  
-
-  if (!isLoggedIn) {
-    if (isLogin) {
-      // isLogin true-na Login component-a kaattu
-      return <Login onLogin={handleLogin} onPageChange={handlePageChange} />;
-    } else {
-      // isLogin false-na Signup component-a kaattu
-      return <Signup onPageChange={handlePageChange} />;
+  // Conditionally render the correct component
+  if (showSignupPage) {
+    if (userType === 'doctor') {
+      return <DoctorSignup onLoginClick={handleLoginClick} />;
+    } else if (userType === 'patient') {
+      // Return PatientSignup here when you create it
     }
   }
 
-  return (
-    <div>
-      <Landingpage />
-    </div>
-  );
+  if (showLoginPage) {
+    if (userType === 'doctor') {
+      return <DoctorLogin onSignupClick={handleSignupClick} />; // Pass the new prop
+    } else if (userType === 'patient') {
+      return <PatientLogin />;
+    }
+  }
+
+  return <Landingpage onLoginClick={handleLoginClick} />;
 }
 
 export default App;
