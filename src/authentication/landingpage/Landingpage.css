@@ -44,15 +44,17 @@ body {
     margin: 0;
 }
 
-.nav-links-and-button { /* Idhu dhaan pudhiya container */
+/* Idhu dhaan pudhiya container for nav links and login button */
+.nav-and-buttons {
     display: flex;
     align-items: center;
-    gap: 30px; /* Gap between nav links and login button */
+    /* Remove gap: 30px; here if you want it closer for desktop */
 }
 
 .nav-links {
     display: flex;
     gap: 20px; /* Links naduvla gap */
+    margin-right: 30px; /* Idhu dhaan Login button-ku konjam space kudukkum */
 }
 
 .nav-link {
@@ -67,6 +69,7 @@ body {
     color: #007bff;
 }
 
+/* Login Button (Directly within nav-and-buttons) */
 .login-btn {
     padding: 10px 25px;
     border-radius: 25px;
@@ -75,43 +78,6 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    background-color: #007bff;
-    color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
-}
-
-.login-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
-}
-
-/* Buttons in Navbar */
-.admin-login-link,
-.login-btn {
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.admin-login-link {
-    background-color: #e9ecef; /* Light grey background */
-    color: #333;
-    margin-right: 15px; /* Space between Admin and Login buttons */
-    border: 1px solid #dee2e6;
-}
-
-.admin-login-link:hover {
-    background-color: #dee2e6;
-    color: #000;
-    border-color: #ced4da;
-}
-
-.login-btn {
     background-color: #007bff;
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
@@ -330,8 +296,19 @@ body {
         flex-direction: column;
         gap: 15px;
     }
+    .nav-and-buttons {
+        flex-direction: column; /* Column-a maathirukken */
+        gap: 15px;
+        width: 100%; /* Full width-ku maathirukken */
+    }
     .nav-links {
         gap: 15px;
+        flex-direction: column; /* Links-a column-a vekka */
+        width: 100%;
+        margin-right: 0; /* Remove right margin for mobile */
+    }
+    .login-btn {
+        width: 80%; /* Button-a konjam perusa vekka */
     }
     .hero-heading {
         font-size: 2.5em;
@@ -369,9 +346,9 @@ body {
     .hero-subheading {
         font-size: 1em;
     }
-    .login-btn, .admin-login-link {
+    .login-btn {
         padding: 8px 20px;
         font-size: 0.9em;
+        width: 90%; /* For even smaller screens */
     }
 }
-

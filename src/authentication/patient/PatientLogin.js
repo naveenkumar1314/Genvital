@@ -1,7 +1,7 @@
 import React from 'react';
 import './PatientLogin.css';
 
-const PatientLogin = () => {
+const PatientLogin = ({ onLoginClick, onSignupClick }) => {
     return (
         <div className="auth-container">
             <div className="login-card">
@@ -18,6 +18,9 @@ const PatientLogin = () => {
                     </div>
                     <button type="submit" className="auth-btn">Login as Patient</button>
                 </form>
+                <div className="switch-link">
+                    New to GEN-VITAL? <span onClick={onSignupClick}>Sign Up as a Patient.</span>
+                </div>
             </div>
         </div>
     );

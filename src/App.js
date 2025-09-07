@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Landingpage from './authentication/landingpage/Landingpage';
 import DoctorLogin from './authentication/doctor/DoctorLogin';
 import PatientLogin from './authentication/patient/PatientLogin';
-import DoctorSignup from './authentication/doctor/DoctorSignup'; // Import the new component
+import DoctorSignup from './authentication/doctor/DoctorSignup';
+import PatientSignup from './authentication/patient/patientSignup';
 
 function App() {
   const [showLoginPage, setShowLoginPage] = useState(false);
-  const [showSignupPage, setShowSignupPage] = useState(false); // New state for signup
-  const [userType, setUserType] = useState(null); // 'doctor' or 'patient'
+  const [showSignupPage, setShowSignupPage] = useState(false);
+  const [userType, setUserType] = useState(null);
 
   const handleLoginClick = (type) => {
     setShowLoginPage(true);
@@ -15,25 +16,32 @@ function App() {
     setUserType(type);
   };
 
-  const handleSignupClick = () => { // New handler for signup
+  const handleSignupClick = (type) => {
     setShowLoginPage(false);
     setShowSignupPage(true);
+    setUserType(type);
   };
-  
+
+  const handleBackToLogin = (type) => {
+    setShowLoginPage(true);
+    setShowSignupPage(false);
+    setUserType(type);
+  };
+
   // Conditionally render the correct component
   if (showSignupPage) {
     if (userType === 'doctor') {
-      return <DoctorSignup onLoginClick={handleLoginClick} />;
+      return <DoctorSignup onLoginClick={handleBackToLogin} />;
     } else if (userType === 'patient') {
-      // Return PatientSignup here when you create it
+      return <PatientSignup onLoginClick={handleBackToLogin} />;
     }
   }
 
   if (showLoginPage) {
     if (userType === 'doctor') {
-      return <DoctorLogin onSignupClick={handleSignupClick} />; // Pass the new prop
+      return <DoctorLogin onSignupClick={() => handleSignupClick('doctor')} />;
     } else if (userType === 'patient') {
-      return <PatientLogin />;
+      return <PatientLogin onSignupClick={() => handleSignupClick('patient')} />;
     }
   }
 
