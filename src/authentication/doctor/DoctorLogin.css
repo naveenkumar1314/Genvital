@@ -1,91 +1,98 @@
-/* General Auth Container Styles */
-.auth-container {
+/* src/authentication/doctor/DoctorLogin.css */
+
+.doctor-login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
-    padding: 20px;
+    background-color: #f0f2f5; /* Light grey background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.signup-card {
-    background: #fff;
+.doctor-login-box {
+    background-color: #ffffff;
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
+    max-width: 400px;
     text-align: center;
-    animation: fadeIn 0.8s ease-out;
 }
 
-.signup-card h1 {
-    color: #007bff;
-    font-size: 2.5em; /* Font size increased for professional look */
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.signup-card p {
-    color: #555;
+.doctor-login-box h2 {
+    margin-top: 0;
     margin-bottom: 30px;
-    font-size: 1.1em;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
 }
 
-.form-group {
+.input-group {
     margin-bottom: 20px;
     text-align: left;
 }
 
-.form-group label {
+.input-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: #444;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
 }
 
-.form-group input, .form-group select {
+.input-group input {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none;
+}
+
+.error-message {
+    color: #dc3545; /* Red for errors */
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-button {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus, .form-group select:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-}
-
-.auth-btn {
-    width: 100%;
-    padding: 15px;
+    background-color: #007bff; /* Primary blue button */
+    color: white;
     border: none;
-    border-radius: 8px;
-    background-color: #28a745; /* Green color for Doctor Signup button */
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: bold;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2); /* Shadow for professional look */
+    transition: background-color 0.3s ease;
 }
 
-.auth-btn:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+.login-button:hover {
+    background-color: #0056b3;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.signup-text {
+    margin-top: 25px;
+    color: #666;
+    font-size: 15px;
+}
+
+.signup-link {
+    color: #007bff; /* Blue link */
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
 }

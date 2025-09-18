@@ -3,7 +3,7 @@ import './Landingpage.css';
 import mainlogo from '../../assets/mainlogo.jpg';
 import heroimage from '../../assets/heroimage.avif';
 
-const Landingpage = ({ onLoginClick }) => { // Ithu romba mukkiyam! onLoginClick-a destructre pannu.
+const Landingpage = ({ onLoginClick }) => { 
   return (
     <div className="landing-page">
       <nav className="navbar">
