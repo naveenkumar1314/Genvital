@@ -53,14 +53,33 @@ body {
     color: #555;
 }
 
-.profile-icon, .logout-icon {
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    color: #007bff;
-    cursor: pointer;
+/* Profile icon specific styling */
+.profile-icon { /* Changed from .profile-icon, .logout-icon to just .profile-icon */
+    width: 40px; /* Specific size for the image */
+    height: 40px; /* Specific size for the image */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure image covers the area nicely */
     margin-left: 10px;
+    cursor: pointer;
 }
+
+.logout-button { /* Changed from .logout-icon to .logout-button */
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 10px; /* Add some padding for better clickability */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #e9f5ff; /* Light background on hover */
+}
+
 
 /* Main Content Wrapper (Sidebar + Cards) */
 .main-content-wrapper {
@@ -84,8 +103,7 @@ body {
 }
 
 .sidebar-menu li {
-    display: flex;
-    align-items: center;
+    /* Removed display: flex, align-items: center for now as we don't have icons */
     padding: 15px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -96,11 +114,19 @@ body {
     background-color: #34495e;
 }
 
+.sidebar-menu li.active {
+    background-color: #007bff; /* Active item color */
+    font-weight: bold;
+}
+
+/* Removed .sidebar-icon as we are not using icons yet */
+/*
 .sidebar-icon {
     font-size: 20px;
     margin-right: 10px;
-    color: #007bff; /* Match logo color for icons */
+    color: #007bff;
 }
+*/
 
 /* Dashboard Cards Area */
 .dashboard-cards-area {
@@ -201,25 +227,57 @@ body {
     color: #28a745; /* New */
 }
 
-.patient-activity-card .progress-circle-placeholder {
-    width: 120px;
-    height: 120px;
-    background-color: #e9ecef;
-    border-radius: 50%;
+/* --- Dynamic Progress Circle Styles (Replaced old .progress-circle-placeholder) --- */
+.patient-activity-card .progress-circle-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #6c757d;
-    font-size: 14px;
-    margin: 0 auto 15px auto;
+    margin: 20px 0;
 }
 
-.patient-activity-card .progress-circle-placeholder img {
-    width: 120px;
+.progress-circle {
+    position: relative;
+    width: 120px; /* Size of the circle */
     height: 120px;
-    display: block;
-    border-radius: 50%; /* Ensure it stays circular */
+    border-radius: 50%;
+    background: #e0e0e0; /* Light grey background for the full circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
+
+.progress-circle .progress-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #007bff var(--p), /* Blue for progress */
+        #e0e0e0 var(--p) /* Light grey for remaining */
+    );
+    z-index: 1;
+}
+
+.progress-circle::before {
+    content: '';
+    position: absolute;
+    width: 90px; /* Size of the inner circle */
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ffffff; /* White inner circle */
+    z-index: 2;
+}
+
+.progress-circle .progress-text {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Darker text for readability */
+    z-index: 3;
+}
+
+/* Removed the old .patient-activity-card .progress-circle-placeholder styles as it's replaced by the above */
 
 .patient-activity-card .activity-detail {
     font-weight: bold;
@@ -268,4 +326,15 @@ body {
 
 .secondary-button:hover {
     background-color: #5a6268;
+}
+
+/* --- NEW STYLES for clickable names --- */
+.clickable-patient-name {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #007bff; /* Blue to indicate it's a link */
+}
+
+.clickable-patient-name:hover {
+    color: #0056b3; /* Darker blue on hover */
 }
